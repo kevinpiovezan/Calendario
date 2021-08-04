@@ -13,17 +13,11 @@
           </li>
         </ul>  
         <% } %>
-        <% if(user) { %>
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0"></ul>
-            <li class="nav-item">
-              <span class="nav-link"> <%= user.email %> </span>
-            </li>
-          </ul>  
-          <% } %>
+
         <% if(user) { %>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="/login/edit">Alterar senha</a>
+            <a class="nav-link" href="/login/edit"> <%= user.email %> </a>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
