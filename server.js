@@ -10,7 +10,7 @@ const MongoStore = require('connect-mongo');//Usado p/ salvar sessoes no BD e na
 const flash = require('connect-flash');//Mensagens salvas do tipo flash
 const routes = require('./routes'); //Requerindo arquivo de rotas
 const path = require('path'); //Resolvedor de caminhos absolutos
-// const helmet = require('helmet');//Pacote de seguranca do express recomendado
+const helmet = require('helmet');//Pacote de seguranca do express recomendado
 const csrf = require('csurf');//Pacote de seguranca de tokens dentro da aplicacao
 const sessionOptions = session({
     secret: 'dsjdsjdhsdjhdjdjsdifiqwbrwqenvoidhsv',
@@ -47,7 +47,7 @@ app.set('view engine', 'ejs');
 //Apontando o caminho dos arquivos estáticos
 app.use(express.static(path.resolve(__dirname, 'public')));
 app.use(favicon(__dirname + '/public/favicon.ico'));
-// app.use(helmet()); //Habilitar apenas em producao, nao usar em 127.0.0.1/localhost ou IP sem uso de SSL, impede de carregar o bundle.js corretamente
+app.use(helmet()); //Habilitar apenas em producao, nao usar em 127.0.0.1/localhost ou IP sem uso de SSL, impede de carregar o bundle.js corretamente
 app.use(csrf());
 app.use(middleWareGlobal);
 app.use(checkCsrfError);
