@@ -1,6 +1,6 @@
 //DOT ENV PARA ENVIO DE SENHA DO MONGODB
 require('dotenv').config();
-
+require('bootstrap');
 //DECLARANDO TODAS AS CONTANTES
 const express = require('express');// Requisitando express(Servidor web)
 const app = express(); //Atribuindo express(Servidor web)
