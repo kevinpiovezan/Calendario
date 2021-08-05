@@ -47,7 +47,7 @@ app.set('view engine', 'ejs');
 //Apontando o caminho dos arquivos estáticos
 app.use(express.static(path.resolve(__dirname, 'public')));
 app.use(favicon(__dirname + '/public/favicon.ico'));
-// app.use(helmet.csp()); //Habilitar apenas em producao, nao usar em 127.0.0.1/localhost ou IP sem uso de SSL, impede de carregar o bundle.js corretamente
+// app.use(helmet()); //Habilitar apenas em producao, nao usar em 127.0.0.1/localhost ou IP sem uso de SSL, impede de carregar o bundle.js corretamente
 app.use(csrf());
 app.use(middleWareGlobal);
 app.use(checkCsrfError);
