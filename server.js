@@ -10,7 +10,7 @@ const MongoStore = require('connect-mongo');//Usado p/ salvar sessoes no BD e na
 const flash = require('connect-flash');//Mensagens salvas do tipo flash
 const routes = require('./routes'); //Requerindo arquivo de rotas
 const path = require('path'); //Resolvedor de caminhos absolutos
-const helmet = require('helmet');//Pacote de seguranca do express recomendado
+// const helmet = require('helmet');//Pacote de seguranca do express recomendado
 const csrf = require('csurf');//Pacote de seguranca de tokens dentro da aplicacao
 const sessionOptions = session({
     secret: 'dsjdsjdhsdjhdjdjsdifiqwbrwqenvoidhsv',
