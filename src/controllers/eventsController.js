@@ -10,7 +10,8 @@ exports.index = async (req, res) => {
       eventDateTermino: req.params.eventDateTermino,
     });
   } catch (e) {
-    req.flash('errors', e);
+    console.log(e);
+    return res.render('404');
   }
 };
 exports.create = async (req, res) => {
@@ -27,6 +28,7 @@ exports.create = async (req, res) => {
     req.session.save(() => res.redirect(`/myevents`));
     return;
   } catch (e) {
+    console.log(e);
     return res.render('404');
   }
 };
