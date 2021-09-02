@@ -1,26 +1,30 @@
-const express = require('express'); // Requisitando express(Servidor web)
-const route = express.Router(); //Essa constante vai ser o "Router"
+const express = require('express');
+
+const route = express.Router();
 const homeController = require('./src/controllers/homeController');
 const loginController = require('./src/controllers/loginController');
-const contatoController = require('./src/controllers/contatoController');
+const eventsController = require('./src/controllers/eventsController');
 
-const {loginRequired} = require('./src/middlewares/middleware');
+const { loginRequired } = require('./src/middlewares/middleware');
 
-//Rotas da home
 route.get('/', homeController.index);
 
-//Rotas de Login
 route.get('/login/logout', loginController.logout);
 route.get('/login/index', loginController.index);
 route.get('/login/edit', loginController.edit);
 route.post('/login/register', loginController.register);
 route.post('/login/login', loginController.login);
-// route.post('/login/editpassword', loginController.editPassword);
+route.post('/login/editpassword', loginRequired, loginController.editPassword);
 
-//Rodas de contato
-route.get('/contato/index',loginRequired, contatoController.index);
-route.post('/contato/register',loginRequired, contatoController.register);
-route.get('/contato/index/:id',loginRequired, contatoController.editIndex);
-route.post('/contato/edit/:id',loginRequired, contatoController.edit);
-route.get('/contato/delete/:id',loginRequired, contatoController.delete);
-module.exports = route; 
+route.get(
+  '/events/create/:eventDate/:date/:eventDateTermino',
+  loginRequired,
+  eventsController.index,
+);
+route.post('/events/create', loginRequired, eventsController.create);
+route.get('/myevents/', loginRequired, eventsController.read);
+route.get('/events/update/:id', loginRequired, eventsController.updateIndex);
+route.put('/events/update/:id', loginRequired, eventsController.update);
+route.delete('/events/delete/:id', loginRequired, eventsController.delete);
+
+module.exports = route;

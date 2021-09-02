@@ -1,13 +1,15 @@
-const Contato = require('../models/ContatoModel')
+const Event = require('../models/EventModel');
 
 exports.index = async (req, res) => {
-    const user = req.session.user
-    if(user){
-    const contatos = await Contato.buscaContatos(user.email);
-    return res.render(`index`, { contatos });
-    } else {
-        const contatos = await Contato.buscaContatos(user);
-        return res.render(`index`, { contatos });
+  try {
+    const { user } = req.session;
+    if (user) {
+      const horas = await new Event().queryEvents(user.email);
+      return res.render(`index`, { horas });
     }
-    // res.render(`index`, { contatos });
+    return res.render(`index`, { horas: '' });
+  } catch (e) {
+    console.log(e);
+    return res.render('404');
+  }
 };

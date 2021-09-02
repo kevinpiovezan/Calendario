@@ -1,2 +1,5 @@
 node_modules
 .env
+.eslintrc.js
+prettier.config.js
+.editorconfig

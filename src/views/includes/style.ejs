@@ -1,0 +1,119 @@
+<style>
+    ul {list-style-type: none;}
+    body {font-family: Verdana, sans-serif;
+    overflow-x: hidden;}
+
+    .month {
+      padding: 70px 25px;
+      width: 100%;
+      background: #212529;
+      text-align: center;
+    }
+
+    .month ul {
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+    }
+
+    .month ul li {
+      color: white;
+      font-size: 20px;
+      letter-spacing: 3px;
+      max-width: 100%;
+    }
+
+    .month .prev {
+      float: left;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .prev:hover, .next:hover {
+      border: 1px solid #fff;
+    }
+    .prev:active, .next:active {
+      background: #fff;
+      color: #212529;
+    }
+
+    .month .next {
+      float: right;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .weekdays {
+      margin: 0;
+      padding: 10px 0;
+      background-color:#ddd;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+    }
+
+    .weekdays li {
+      display: inline-block;
+      width: 13.6%;
+      color: #666;
+      text-align: center;
+      flex-wrap: nowrap;
+    }
+
+    .days {
+      padding: 0;
+      background: #eee;
+      margin: 0;
+      align-items: center;
+    }
+
+    .days li {
+      list-style-type: none;
+      display: inline-flex;
+      flex-wrap: nowrap;
+      width: 14.25%;
+      height: 50px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      font-size:18px;
+      color: #777;
+      cursor: pointer;
+    }
+
+    li.prev-days, li.next-days {
+      background: #ccc;
+      border-right: #BBB 1px solid;
+      color: #999;
+    }
+    .days li:hover {
+      border: ridge 2px #555
+    }
+    .days li:active {
+      color: #fff;
+      background-color: #999;
+    }
+    .days li.active {
+      padding: 5px;
+      background: #0e5512;
+      color: white
+    }
+    .days li.active:hover {
+      border: none;
+      font-weight: bold;
+    }
+    .days li.active.event {
+      background-color: #18b120;
+    }
+    .days li.active.event:hover {
+      background-color: #333;
+    }
+
+    li.event {
+      background-color: #333;
+      color: #fff;
+      font-weight: bold;
+    }
+    li.event:hover {
+      background-color: #18b120;
+    }
+    </style>

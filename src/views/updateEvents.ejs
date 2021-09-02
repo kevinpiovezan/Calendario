@@ -1,0 +1,36 @@
+<%- include('includes/head'); %>
+    <%- include('includes/nav'); %>
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8 my-3">
+                <h1 class="text-center">Calendário</h1>
+                <p class="text-center lead">Cadastre seu evento abaixo ou verifique seus eventos</p>
+                <%- include('includes/messages') %>
+                        <form action="/events/update/<%= event._id %>?_method=PUT" method="post">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <div class="form-group">
+                            <label>Descrição:</label>
+                            <input type="text" value="<%= descricao %>" class="form-control" name="descricao">
+                        </div>
+                        <div class="form-group">
+                            <label>Hora de início:</label>
+                            <input type="datetime-local" value="<%= horaInicio.slice(0, -7) %>" min="<%= minHora%>" max="<%= maxHora%>" class="form-control" name="horaInicio" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Hora de término:</label>
+
+                            <input type="datetime-local" value="<%= horaTermino.slice(0, -7) %>" min="<%= minHora%>" max="<%= maxHora%>" class="form-control" name="horaTermino" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" value="<%= user.email %>" name="user">
+                        </div>
+                        <div class="form-group">
+                          <input type="hidden" value="<%= date %>" name="date">
+                        </div>
+                        <button type="submit" class="btn btn-primary my-3">Salvar</button>
+                    </form>
+
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+        <%- include('includes/footer'); %>
