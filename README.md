@@ -1,6 +1,6 @@
 # Calendário de eventos
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
-## Olá! Nesse projeto desenvolvi um sistema de calendário em que o usuário pode cadastrar eventos em dias específicos, confira abaixo:
+## Olá! Nesse projeto desenvolvi um sistema de calendário eno qual o usuário pode cadastrar eventos em dias específicos, confira abaixo:
 ![javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![ejs](https://img.shields.io/badge/EJS-a12016?style=for-the-badge&logo=ejs)
 ![html](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
